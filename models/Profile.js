@@ -12,8 +12,7 @@ const ProfileSchema = new Schema({
     required: true,
     max: 40
   },
-
-  campany: {
+  company: {
     type: String
   },
   website: {
@@ -42,7 +41,7 @@ const ProfileSchema = new Schema({
         type: String,
         required: true
       },
-      campany: {
+      company: {
         type: String,
         required: true
       },
@@ -96,16 +95,16 @@ const ProfileSchema = new Schema({
     }
   ],
   social: {
-    linkedin: {
+    youtube: {
       type: String
     },
     twitter: {
       type: String
     },
-    youtube: {
+    facebook: {
       type: String
     },
-    facebook: {
+    linkedin: {
       type: String
     },
     instagram: {

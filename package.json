@@ -1,7 +1,7 @@
 {
-  "name": "devmarines",
+  "name": "student-portail",
   "version": "1.0.0",
-  "description": "Social Network",
+  "description": "Social Network backend-api-student-portail",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
