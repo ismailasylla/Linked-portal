@@ -30,33 +30,38 @@ class Register extends Component {
       password2: this.state.password2
     };
 
-    console.log(newUser);
+    // Register User...
+    axios
+      .post('/api/users/register', newUser)
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err.response.data));
   }
 
   render() {
     return (
-      <div class="register">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 m-auto">
-              <h1 class="display-4 text-center">Sign Up</h1>
-              <p class="lead text-center">Create your DevConnector account</p>
+      <div className="register">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-8 m-auto">
+              <h1 className="display-4 text-center">Sign Up</h1>
+              <p className="lead text-center">
+                Create your DevConnector account
+              </p>
               <form onSubmit={this.onSubmit}>
-                <div class="form-group">
+                <div className="form-group">
                   <input
                     type="text"
-                    class="form-control form-control-lg"
+                    className="form-control form-control-lg"
                     placeholder="Name"
                     name="name"
                     value={this.state.name}
                     onChange={this.onChange}
-                    required
                   />
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                   <input
                     type="email"
-                    class="form-control form-control-lg"
+                    className="form-control form-control-lg"
                     placeholder="Email Address"
                     name="email"
                     value={this.state.email}
@@ -67,27 +72,27 @@ class Register extends Component {
                     a Gravatar email
                   </small>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                   <input
                     type="password"
-                    class="form-control form-control-lg"
+                    className="form-control form-control-lg"
                     placeholder="Password"
                     name="password"
                     value={this.state.password}
                     onChange={this.onChange}
                   />
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                   <input
                     type="password"
-                    class="form-control form-control-lg"
+                    className="form-control form-control-lg"
                     placeholder="Confirm Password"
                     name="password2"
                     value={this.state.password2}
                     onChange={this.onChange}
                   />
                 </div>
-                <input type="submit" class="btn btn-info btn-block mt-4" />
+                <input type="submit" className="btn btn-info btn-block mt-4" />
               </form>
             </div>
           </div>
