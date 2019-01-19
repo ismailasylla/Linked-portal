@@ -40,19 +40,6 @@ export const createProfile = (profileData, history) => dispatch => {
     );
 };
 
-// Add education
-export const addEducation = (eduData, history) => dispatch => {
-  axios
-    .post('/api/profile/education', eduData)
-    .then(res => history.push('/dashboard'))
-    .catch(err =>
-      dispatch({
-        type: GET_ERRORS,
-        payload: err.response.data
-      })
-    );
-};
-
 // Add experience
 export const addExperience = (expData, history) => dispatch => {
   axios
@@ -66,15 +53,60 @@ export const addExperience = (expData, history) => dispatch => {
     );
 };
 
-// Delete Account & profile
-export const deleteAccount = () => dispatch => {
-  if (
-    window.confirm(
-      'Are you sure you want to continue ? This action will delete your profile and can NOT be undone!'
+// Add education
+export const addEducation = (eduData, history) => dispatch => {
+  axios
+    .post('/api/profile/education', eduData)
+    .then(res => history.push('/dashboard'))
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    );
+};
+
+// Delete Experience
+export const deleteExperience = id => dispatch => {
+  axios
+    .delete(`/api/profile/experience/${id}`)
+    .then(res =>
+      dispatch({
+        type: GET_PROFILE,
+        payload: res.data
+      })
     )
-  ) {
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    );
+};
+
+// Delete Education
+export const deleteEducation = id => dispatch => {
+  axios
+    .delete(`/api/profile/education/${id}`)
+    .then(res =>
+      dispatch({
+        type: GET_PROFILE,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    );
+};
+
+// Delete account & profile
+export const deleteAccount = () => dispatch => {
+  if (window.confirm('Are you sure? This can NOT be undone!')) {
     axios
-      .delete('/api/profile/')
+      .delete('/api/profile')
       .then(res =>
         dispatch({
           type: SET_CURRENT_USER,
