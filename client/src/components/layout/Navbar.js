@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../../img/logo.svg';
+import logo from '../../img/africa_map.png';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';

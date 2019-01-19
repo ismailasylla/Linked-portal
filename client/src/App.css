@@ -11,9 +11,10 @@ img {
 }
 
 .logo {
-  width: 90px;
+  width: 73px;
   margin-top: -7px;
   margin: -17px;
+  /* margin: -20px; */
 }
 
 .logo:hover {

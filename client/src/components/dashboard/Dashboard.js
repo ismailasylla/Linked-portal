@@ -31,7 +31,18 @@ class Dashboard extends Component {
         dashboardContent = (
           <div>
             <p className="lead text-muted">
-              Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
+              Welcome
+              <img
+                className="rounded-circle"
+                src={user.avatar}
+                alt={user.name}
+                style={{
+                  width: '105px',
+                  margin: '5px'
+                }}
+                title="You must have a Gravatar connected to your email to display the image profile"
+              />
+              <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
             </p>
             <ProfileActions />
             <Experience experience={profile.experience} />
@@ -64,7 +75,9 @@ class Dashboard extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1 className="display-4">Dashboard</h1>
+              <h1 className="display-4">
+                <i className="fas fa-tachometer-alt"> Dashboard</i>
+              </h1>
               {dashboardContent}
             </div>
           </div>
