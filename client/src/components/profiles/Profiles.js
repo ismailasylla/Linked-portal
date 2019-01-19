@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import logo from '../../img/africa_map.png';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Spinner from '../common/Spinner';
@@ -31,8 +32,17 @@ class Profiles extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1 className="display-4 text-center">Developer Profiles</h1>
-              <p className="lead text-center">
+              <h1 className="display-4 text-center">
+                {' '}
+                <img
+                  src={logo}
+                  alt=""
+                  // style={{ width: 90, marginTop: -7 }}
+                  className="logo"
+                />
+                Africa-Linked
+              </h1>
+              <p className="lead text-center mt-4">
                 Browse and connect with developers
               </p>
               {profileItems}
@@ -53,4 +63,7 @@ const mapStateToProps = state => ({
   profile: state.profile
 });
 
-export default connect(mapStateToProps, { getProfiles })(Profiles);
+export default connect(
+  mapStateToProps,
+  { getProfiles }
+)(Profiles);
