@@ -16,11 +16,11 @@ class Landing extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-12 text-center">
-                <h1 className="display-3 mb-4">Students Portail</h1>
+                <h1 className="display-3 mb-4">Africa-Linked</h1>
                 <p className="lead">
                   {' '}
-                  Create a student profile/portfolio, share posts and get help
-                  from other students
+                  Create a Job hunt profile set up your Qualifications share
+                  posts and get Noticed by Recruters
                 </p>
                 <hr />
                 <Link to="/register" className="btn btn-lg btn-info mr-2">
