@@ -50,7 +50,7 @@ class Dashboard extends Component {
             <div style={{ marginBottom: '60px' }} />
             <button
               onClick={this.onDeleteClick.bind(this)}
-              className="btn btn-danger"
+              className="btn btn-outline-danger"
             >
               Delete My Account
             </button>
@@ -62,7 +62,10 @@ class Dashboard extends Component {
           <div>
             <p className="lead text-muted">Welcome {user.name}</p>
             <p>You have not yet setup a profile, please add some info</p>
-            <Link to="/create-profile" className="btn btn-lg btn-info">
+            <Link
+              to="/create-profile"
+              className="btn btn-lg btn btn-outline-info"
+            >
               Create Profile
             </Link>
           </div>

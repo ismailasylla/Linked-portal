@@ -50,12 +50,12 @@ class Navbar extends Component {
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
           <Link className="nav-link" to="/register">
-            <i class="fas fa-user-plus"> Sign Up</i>
+            <i className="fas fa-user-plus"> Sign Up</i>
           </Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="/login">
-            <i class="fas fa-user-tie"> Login</i>
+            <i className="fas fa-user-tie"> Login</i>
           </Link>
         </li>
       </ul>
@@ -88,7 +88,7 @@ class Navbar extends Component {
               <li className="nav-item">
                 <Link className="nav-link" to="/profiles">
                   {' '}
-                  <i class="fas fa-users"> Profiles</i>
+                  <i className="fas fa-users"> Profiles</i>
                 </Link>
               </li>
             </ul>

@@ -46,9 +46,24 @@ img {
   margin-bottom: -50px;
 }
 
+.notfound {
+  padding-top: 80px;
+}
+
+.notfound {
+  position: relative;
+  background: url('./img/404/Error-Message.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin-top: -24px;
+  margin-bottom: -50px;
+}
+
 .landing-inner {
   padding-top: 80px;
 }
+
 .loging-background {
   position: relative;
   background: url('./img/africa1.jpg') no-repeat;

@@ -67,7 +67,7 @@ class AddEducation extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
-              <Link to="/dashboard" className="btn btn-light">
+              <Link to="/dashboard" className="btn btn-outline-info">
                 Go Back
               </Link>
               <h1 className="display-4 text-center">Add Education</h1>
@@ -139,7 +139,7 @@ class AddEducation extends Component {
                 <input
                   type="submit"
                   value="Submit"
-                  className="btn btn-info btn-block mt-4"
+                  className="btn btn-outline-info btn-block mt-4"
                 />
               </form>
             </div>

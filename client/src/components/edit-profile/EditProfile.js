@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import TextFieldGroup from '../common/TextFieldGroup';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
@@ -42,13 +42,14 @@ class CreateProfile extends Component {
     if (nextProps.errors) {
       this.setState({ errors: nextProps.errors });
     }
+
     if (nextProps.profile.profile) {
       const profile = nextProps.profile.profile;
 
-      // Bring skills array back to coma separated calue CSV
+      // Bring skills array back to CSV
       const skillsCSV = profile.skills.join(',');
 
-      // if profile field doesn't exit, make empty string
+      // If profile field doesnt exist, make empty string
       profile.company = !isEmpty(profile.company) ? profile.company : '';
       profile.website = !isEmpty(profile.website) ? profile.website : '';
       profile.location = !isEmpty(profile.location) ? profile.location : '';
@@ -86,7 +87,8 @@ class CreateProfile extends Component {
         twitter: profile.twitter,
         facebook: profile.facebook,
         linkedin: profile.linkedin,
-        youtube: profile.youtube
+        youtube: profile.youtube,
+        instagram: profile.instagram
       });
     }
   }
@@ -191,6 +193,9 @@ class CreateProfile extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
+              <Link to="/dashboard" className="btn btn-outline-info">
+                Go Back
+              </Link>
               <h1 className="display-4 text-center">Edit Profile</h1>
               <small className="d-block pb-3">* = required fields</small>
               <form onSubmit={this.onSubmit}>
@@ -279,7 +284,7 @@ class CreateProfile extends Component {
                 <input
                   type="submit"
                   value="Submit"
-                  className="btn btn-info btn-block mt-4"
+                  className="btn btn-outline-info btn-block mt-4"
                 />
               </form>
             </div>
