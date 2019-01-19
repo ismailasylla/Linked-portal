@@ -50,35 +50,55 @@ class Login extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="login">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Log In</h1>
-              <p className="lead text-center">
-                Sign in to your Student account
-              </p>
-              <form onSubmit={this.onSubmit}>
-                <TextFieldGroup
-                  placeholder="Email Address"
-                  name="email"
-                  type="email"
-                  value={this.state.email}
-                  onChange={this.onChange}
-                  error={errors.email}
-                />
+      <div className="loging-background">
+        <div className="dark-overlay landing-inner text-light">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12 text-center">
+                <h1 className="display-3 mb-4">Africa-Linked</h1>
+                <p className="lead">
+                  {' '}
+                  Create a Job hunt profile set up your Qualifications share
+                  posts and get Noticed by Recruters
+                </p>
+                <hr />
+                <div className="login">
+                  <div className="container">
+                    <div className="row">
+                      <div className="col-md-5 m-auto">
+                        <h1 className="display-4 text-center">Log In</h1>
+                        <p className="lead text-center">
+                          Sign in to your Student account
+                        </p>
+                        <form onSubmit={this.onSubmit}>
+                          <TextFieldGroup
+                            placeholder="Email Address"
+                            name="email"
+                            type="email"
+                            value={this.state.email}
+                            onChange={this.onChange}
+                            error={errors.email}
+                          />
 
-                <TextFieldGroup
-                  placeholder="password"
-                  name="password"
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.onChange}
-                  error={errors.password}
-                />
+                          <TextFieldGroup
+                            placeholder="password"
+                            name="password"
+                            type="password"
+                            value={this.state.password}
+                            onChange={this.onChange}
+                            error={errors.password}
+                          />
 
-                <input type="submit" className="btn btn-info btn-block mt-4" />
-              </form>
+                          <input
+                            type="submit"
+                            className="btn btn-info btn-block mt-4"
+                          />
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

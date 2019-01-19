@@ -53,47 +53,69 @@ class Register extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="register">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Sign Up</h1>
-              <p className="lead text-center">Create your Student account</p>
-              <form onSubmit={this.onSubmit}>
-                <TextFieldGroup
-                  placeholder="Name"
-                  name="name"
-                  value={this.state.name}
-                  onChange={this.onChange}
-                  error={errors.name}
-                />
-                <TextFieldGroup
-                  placeholder="Enter Email"
-                  name="email"
-                  type="email"
-                  value={this.state.email}
-                  onChange={this.onChange}
-                  error={errors.email}
-                  info="This site uses Gravatar if you want a profile image use a Gravatar email"
-                />
-                <TextFieldGroup
-                  placeholder="Enter Password"
-                  name="password"
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.onChange}
-                  error={errors.password}
-                />
-                <TextFieldGroup
-                  placeholder="Comfirm Password"
-                  name="password2"
-                  type="password"
-                  value={this.state.password2}
-                  onChange={this.onChange}
-                  error={errors.password2}
-                />
-                <input type="submit" className="btn btn-info btn-block mt-4" />
-              </form>
+      <div className="landing">
+        <div className="dark-overlay landing-inner text-light">
+          <div className="container" style={{ marginTop: '-60px' }}>
+            <div className="row">
+              <div className="col-md-12 text-center">
+                <h1 className="display-3 mb-2">Africa-Linked</h1>
+                <p className="lead mb-4">
+                  {' '}
+                  Create a Job hunt profile set up your Qualifications share
+                  posts and get Noticed by Recruters
+                </p>
+                <hr />
+                <div className="register">
+                  <div className="container" style={{ marginTop: '-50px' }}>
+                    <div className="row">
+                      <div className="col-md-5 m-auto">
+                        <h1 className="display-4 text-center">Sign Up</h1>
+                        <p className="lead text-center">
+                          Create your Student account
+                        </p>
+                        <form onSubmit={this.onSubmit}>
+                          <TextFieldGroup
+                            placeholder="Name"
+                            name="name"
+                            value={this.state.name}
+                            onChange={this.onChange}
+                            error={errors.name}
+                          />
+                          <TextFieldGroup
+                            placeholder="Enter Email"
+                            name="email"
+                            type="email"
+                            value={this.state.email}
+                            onChange={this.onChange}
+                            error={errors.email}
+                            info="This site uses Gravatar if you want a profile image use a Gravatar email"
+                          />
+                          <TextFieldGroup
+                            placeholder="Enter Password"
+                            name="password"
+                            type="password"
+                            value={this.state.password}
+                            onChange={this.onChange}
+                            error={errors.password}
+                          />
+                          <TextFieldGroup
+                            placeholder="Comfirm Password"
+                            name="password2"
+                            type="password"
+                            value={this.state.password2}
+                            onChange={this.onChange}
+                            error={errors.password2}
+                          />
+                          <input
+                            type="submit"
+                            className="btn btn-info btn-block mt-4"
+                          />
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
