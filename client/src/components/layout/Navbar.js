@@ -20,7 +20,7 @@ class Navbar extends Component {
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
           <Link className="nav-link" to="/dashboard">
-            Dashboard
+            <i class="fas fa-clipboard-list"> Dashboard</i>
           </Link>
         </li>
         <li className="nav-item">
@@ -40,7 +40,9 @@ class Navbar extends Component {
               }}
               title="You must have a Gravatar connected to your email to display the image profile"
             />
-            Logout
+            <b>
+              Logout <span class="fas fa-sign-out-alt" />
+            </b>
           </a>
         </li>
       </ul>
@@ -88,7 +90,7 @@ class Navbar extends Component {
               <li className="nav-item">
                 <Link className="nav-link" to="/profiles">
                   {' '}
-                  <i className="fas fa-users"> Profiles</i>
+                  <i class="fas fa-home"> Home</i>
                 </Link>
               </li>
             </ul>
