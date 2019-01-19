@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import logo from '../../img/logo.svg';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import { clearCurrentProfile } from '../../actions/profileActions';
+import '../../App.css';
 
 class Navbar extends Component {
   onLogoutClick(e) {
@@ -48,12 +50,12 @@ class Navbar extends Component {
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
           <Link className="nav-link" to="/register">
-            Sign Up
+            <i class="fas fa-user-plus"> Sign Up</i>
           </Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="/login">
-            Login
+            <i class="fas fa-user-tie"> Login</i>
           </Link>
         </li>
       </ul>
@@ -64,6 +66,12 @@ class Navbar extends Component {
       <nav className="navbar navbar-expand-sm navbar-dark bg-info mb-4">
         <div className="container">
           <Link className="navbar-brand" to="/">
+            <img
+              src={logo}
+              alt=""
+              // style={{ width: 90, marginTop: -7 }}
+              className="logo"
+            />
             Africa-Linked
           </Link>
           <button
@@ -80,7 +88,7 @@ class Navbar extends Component {
               <li className="nav-item">
                 <Link className="nav-link" to="/profiles">
                   {' '}
-                  Profiles
+                  <i class="fas fa-users"> Profiles</i>
                 </Link>
               </li>
             </ul>
