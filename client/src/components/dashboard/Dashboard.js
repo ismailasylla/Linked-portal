@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { getCurrentProfile } from '../../actions/profileActions';
 import { connect } from 'react-redux';
+import { getCurrentProfile } from '../../actions/profileActions';
 import Spinner from '../common/Spinner';
 
 class Dashboard extends Component {
   componentDidMount() {
     this.props.getCurrentProfile();
   }
+
   render() {
     const { user } = this.props.auth;
     const { profile, loading } = this.props.profile;
@@ -18,15 +19,15 @@ class Dashboard extends Component {
     if (profile === null || loading) {
       dashboardContent = <Spinner />;
     } else {
-      // Check if login User has profile data
-      if (Object.keys(profile).lenght > 0) {
-        dashboardContent = <h4>TODO: Display Profile</h4>;
+      // Check if logged in user has profile data
+      if (Object.keys(profile).length > 0) {
+        dashboardContent = <h4>TODO: DISPLAY PROFILE</h4>;
       } else {
         // User is logged in but has no profile
         dashboardContent = (
           <div>
             <p className="lead text-muted">Welcome {user.name}</p>
-            <p>You have not yet set up the profile please add some info</p>
+            <p>You have not yet setup a profile, please add some info</p>
             <Link to="/create-profile" className="btn btn-lg btn-info">
               Create Profile
             </Link>
@@ -34,8 +35,9 @@ class Dashboard extends Component {
         );
       }
     }
+
     return (
-      <div className="dashbord">
+      <div className="dashboard">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
@@ -48,7 +50,8 @@ class Dashboard extends Component {
     );
   }
 }
-Dashboard.PropTypes = {
+
+Dashboard.propTypes = {
   getCurrentProfile: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   profile: PropTypes.object.isRequired
