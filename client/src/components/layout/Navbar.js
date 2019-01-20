@@ -19,6 +19,12 @@ class Navbar extends Component {
     const authLinks = (
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
+          <Link className="nav-link" to="/profiles">
+            {' '}
+            <i class="fas fa-home"> Home</i>
+          </Link>
+        </li>
+        <li className="nav-item">
           <Link className="nav-link" to="/dashboard">
             <i class="fas fa-clipboard-list"> Dashboard</i>
           </Link>
@@ -30,19 +36,19 @@ class Navbar extends Component {
             className="nav-link"
           >
             {' '}
+            <b>
+              Logout <span class="fas fa-sign-out-alt" />
+            </b>
             <img
               className="rounded-circle"
               src={user.avatar}
               alt={user.name}
               style={{
                 width: '25px',
-                marginRight: '5px'
+                marginLeft: '5px'
               }}
               title="You must have a Gravatar connected to your email to display the image profile"
             />
-            <b>
-              Logout <span class="fas fa-sign-out-alt" />
-            </b>
           </a>
         </li>
       </ul>
@@ -86,14 +92,6 @@ class Navbar extends Component {
           </button>
 
           <div className="collapse navbar-collapse" id="mobile-nav">
-            <ul className="navbar-nav mr-auto">
-              <li className="nav-item">
-                <Link className="nav-link" to="/profiles">
-                  {' '}
-                  <i class="fas fa-home"> Home</i>
-                </Link>
-              </li>
-            </ul>
             {isAuthenticated ? authLinks : guestLinks}
           </div>
         </div>
