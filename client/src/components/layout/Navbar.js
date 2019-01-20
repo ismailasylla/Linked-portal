@@ -21,12 +21,17 @@ class Navbar extends Component {
         <li className="nav-item">
           <Link className="nav-link" to="/profiles">
             {' '}
-            <i class="fas fa-home"> Home</i>
+            <i className="fas fa-home"> Home</i>
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/feed">
+            <i className="fas fa-clipboard-list"> Post Feed</i>
           </Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="/dashboard">
-            <i class="fas fa-clipboard-list"> Dashboard</i>
+            <i className="fas fa-clipboard-list"> Dashboard</i>
           </Link>
         </li>
         <li className="nav-item">
@@ -37,7 +42,7 @@ class Navbar extends Component {
           >
             {' '}
             <b>
-              Logout <span class="fas fa-sign-out-alt" />
+              Logout <span className="fas fa-sign-out-alt" />
             </b>
             <img
               className="rounded-circle"
